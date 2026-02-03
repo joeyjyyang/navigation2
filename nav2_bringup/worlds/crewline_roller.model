@@ -6,37 +6,27 @@
       <link name="base_footprint"/>
 
       <link name="base_link">
-        <!-- <inertial>
-          <pose>-0.064 0 0.048 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
           <inertia>
-            <ixx>0.001</ixx>
-            <ixy>0.000</ixy>
-            <ixz>0.000</ixz>
-            <iyy>0.001</iyy>
-            <iyz>0.000</iyz>
-            <izz>0.001</izz>
+            <ixx>333.33</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>333.33</iyy>
+            <iyz>0.0</iyz>
+            <izz>333.33</izz>
           </inertia>
-          <mass>1.0</mass>
+          <mass>500.0</mass>
         </inertial>
 
         <collision name="base_collision">
-          <pose>-0.064 0 0.048 0 0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <box>
-              <size>0.265 0.265 0.089</size>
+              <size>2.0 2.0 2.0</size>
             </box>
           </geometry>
         </collision>
-
-        <visual name="base_visual">
-          <pose>-0.064 0 0 0 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://turtlebot3_common/meshes/waffle_base.dae</uri>
-              <scale>0.001 0.001 0.001</scale>
-            </mesh>
-          </geometry>
-        </visual> -->
       </link>
 
       <link name="imu_link">
@@ -98,24 +88,24 @@
       <link name="wheel_left_link">
 
         <inertial>
-          <pose>0.0 0.144 0.023 -1.57 0 0</pose>
+          <pose>0.0 1.0 -0.8 -1.57 0 0</pose>
           <inertia>
-            <ixx>0.001</ixx>
-            <ixy>0.000</ixy>
-            <ixz>0.000</ixz>
-            <iyy>0.001</iyy>
-            <iyz>0.000</iyz>
-            <izz>0.001</izz>
+            <ixx>0.05</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.05</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.02</izz>
           </inertia>
-          <mass>0.1</mass>
+          <mass>10.0</mass>
         </inertial>
 
         <collision name="wheel_left_collision">
-          <pose>0.0 0.144 0.023 -1.57 0 0</pose>
+          <pose>0.0 1.0 -0.8 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.033</radius>
-              <length>0.018</length>
+              <radius>0.2</radius>
+              <length>0.2</length>
             </cylinder>
           </geometry>
           <surface>
@@ -141,39 +131,29 @@
             </contact>
           </surface>
         </collision>
-
-        <visual name="wheel_left_visual">
-          <pose>0.0 0.144 0.023 0 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://turtlebot3_common/meshes/tire.dae</uri>
-              <scale>0.001 0.001 0.001</scale>
-            </mesh>
-          </geometry>
-        </visual>
       </link>
 
       <link name="wheel_right_link">
 
         <inertial>
-          <pose>0.0 -0.144 0.023 -1.57 0 0</pose>
+          <pose>0.0 -1.0 -0.8 -1.57 0 0</pose>
           <inertia>
-            <ixx>0.001</ixx>
-            <ixy>0.000</ixy>
-            <ixz>0.000</ixz>
-            <iyy>0.001</iyy>
-            <iyz>0.000</iyz>
-            <izz>0.001</izz>
+            <ixx>0.05</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.05</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.02</izz>
           </inertia>
-          <mass>0.1</mass>
+          <mass>10.0</mass>
         </inertial>
       
         <collision name="wheel_right_collision">
-          <pose>0.0 -0.144 0.023 -1.57 0 0</pose>
+          <pose>0.0 -1.0 -0.8 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.033</radius>
-              <length>0.018</length>
+              <radius>0.2</radius>
+              <length>0.2</length>
             </cylinder>
           </geometry>
           <surface>
@@ -199,21 +179,11 @@
             </contact>
           </surface>
         </collision>
-
-        <visual name="wheel_right_visual">
-          <pose>0.0 -0.144 0.023 0 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://turtlebot3_common/meshes/tire.dae</uri>
-              <scale>0.001 0.001 0.001</scale>
-            </mesh>
-          </geometry>
-        </visual>
       </link>
 
       <link name="front_camera_link">
         <inertial>
-          <pose>0.069 0 0.107 0 0 0</pose>
+          <pose>1.0 0 1.0 0 0 0</pose>
           <inertia>
             <ixx>0.001</ixx>
             <ixy>0.000</ixy>
@@ -233,12 +203,12 @@
           </geometry>
         </collision>
 
-        <pose>0.069 0 0.107 0 0 0</pose>
+        <pose>1.0 0 1.0 0 0 0</pose>
 
         <sensor name="front_intel_realsense_r200_depth" type="depth">
           <always_on>1</always_on>
           <update_rate>10</update_rate>
-          <pose>0.064 0 0.107 0 0 0</pose>
+          <pose>1.0 0 1.0 0 0 0</pose>
           <camera name="front_realsense_depth_camera">
           </camera>
           <plugin name="front_intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
@@ -251,21 +221,11 @@
             <max_depth>10.0</max_depth>
           </plugin>
         </sensor>
-
-        <collision name="collision">
-          <pose>0 0.047 -0.005 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.008 0.130 0.022</size>
-            </box>
-          </geometry>
-        </collision>
-        <pose>0.069 0 0.107 0 0 0</pose>
       </link>
 
       <link name="rear_camera_link">
         <inertial>
-          <pose>-0.069 0 0.107 0 0 0</pose>
+          <pose>-1.0 0 1.0 0 0 0</pose>
           <inertia>
             <ixx>0.001</ixx>
             <ixy>0.000</ixy>
@@ -285,12 +245,12 @@
           </geometry>
         </collision>
 
-        <pose>-0.069 0 0.107 0 0 0</pose>
+        <pose>-1.0 0 1.0 0 0 0</pose>
 
         <sensor name="rear_intel_realsense_r200_depth" type="depth">
           <always_on>1</always_on>
           <update_rate>10</update_rate>
-          <pose>-0.064 0 0.107 0 0 3.14</pose>
+          <pose>-1.0 0 1.0 0 0 3.14</pose>
           <camera name="rear_realsense_depth_camera">
           </camera>
           <plugin name="rear_intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
@@ -303,20 +263,30 @@
             <max_depth>10.0</max_depth>
           </plugin>
         </sensor>
-
-        <pose>-0.069 0 0.107 0 0 0</pose>
       </link>
 
       <joint name="base_joint" type="fixed">
         <parent>base_footprint</parent>
         <child>base_link</child>
-        <pose>0.0 0.0 0.010 0 0 0</pose>
+        <pose>0.0 0.0 1.0 0 0 0</pose>
+      </joint>
+
+      <joint name="imu_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>imu_link</child>
+        <pose>0.0 0 1.0 0 0 0</pose>
+      </joint>
+
+      <joint name="gps_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>gps_link</child>
+        <pose>0.0 0 1.0 0 0 0</pose>
       </joint>
 
       <joint name="wheel_left_joint" type="revolute">
         <parent>base_link</parent>
         <child>wheel_left_link</child>
-        <pose>0.0 0.144 0.023 -1.57 0 0</pose>
+        <pose>0.0 1.0 -0.8 -1.57 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -325,7 +295,7 @@
       <joint name="wheel_right_joint" type="revolute">
         <parent>base_link</parent>
         <child>wheel_right_link</child>
-        <pose>0.0 -0.144 0.023 -1.57 0 0</pose>
+        <pose>0.0 -1.0 -0.8 -1.57 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -334,7 +304,7 @@
       <joint name="front_camera_joint" type="fixed">
         <parent>base_link</parent>
         <child>front_camera_link</child>
-        <pose>0.064 0 0.094 0 0 0</pose>
+        <pose>1.0 0 1.0 0 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -343,9 +313,46 @@
       <joint name="rear_camera_joint" type="fixed">
         <parent>base_link</parent>
         <child>rear_camera_link</child>
-        <pose>-0.064 0 0.094 0 0 3.14</pose>
+        <pose>-1.0 0 1.0 0 0 3.14</pose>
         <axis>
           <xyz>0 0 1</xyz>
+        </axis>
+      </joint>
+
+      <link name="roller_link">
+        <inertial>
+          <pose>1.5 0 -0.5 0 0 0</pose>
+          <inertia>
+            <ixx>75.0</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>33.33</iyy>
+            <iyz>0.0</iyz>
+            <izz>100.0</izz>
+          </inertia>
+          <mass>200.0</mass>
+        </inertial>
+
+        <collision name="roller_collision">
+          <pose>1.5 0 -0.5 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1.0 2.0 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+
+      <joint name="roller_joint" type="revolute">
+        <parent>base_link</parent>
+        <child>roller_link</child>
+        <pose>1.5 0 -0.5 0 0 0</pose>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-0.785</lower>
+            <upper>0.785</upper>
+          </limit>
         </axis>
       </joint>
 
@@ -365,8 +372,8 @@
         <right_joint>wheel_right_joint</right_joint>
 
         <!-- kinematics -->
-        <wheel_separation>0.287</wheel_separation>
-        <wheel_diameter>0.066</wheel_diameter>
+        <wheel_separation>2.0</wheel_separation>
+        <wheel_diameter>0.4</wheel_diameter>
 
         <!-- limits -->
         <max_wheel_torque>20</max_wheel_torque>
@@ -393,6 +400,7 @@
         <update_rate>30</update_rate>
         <joint_name>wheel_left_joint</joint_name>
         <joint_name>wheel_right_joint</joint_name>
+        <joint_name>roller_joint</joint_name>
       </plugin>
 
     </model>

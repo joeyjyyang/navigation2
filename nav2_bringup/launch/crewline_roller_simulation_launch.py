@@ -148,12 +148,12 @@ def generate_launch_description():
 
     declare_robot_name_cmd = DeclareLaunchArgument(
         'robot_name',
-        default_value='crewline_turtlebot',
+        default_value='crewline_roller',
         description='name of the robot')
 
     declare_robot_sdf_cmd = DeclareLaunchArgument(
         'robot_sdf',
-        default_value=os.path.join(bringup_dir, 'worlds', 'crewline_turtlebot.model'),
+        default_value=os.path.join(bringup_dir, 'worlds', 'crewline_roller.model'),
         description='Full path to robot sdf file to spawn the robot in gazebo')
 
     # Specify the actions
@@ -169,7 +169,7 @@ def generate_launch_description():
         cmd=['gzclient'],
         cwd=[launch_dir], output='screen')
 
-    urdf = os.path.join(bringup_dir, 'urdf', 'crewline_turtlebot.urdf')
+    urdf = os.path.join(bringup_dir, 'urdf', 'crewline_roller.urdf')
     with open(urdf, 'r') as infp:
         robot_description = infp.read()
 
