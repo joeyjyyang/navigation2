@@ -420,12 +420,26 @@
             </cylinder>
           </geometry>
           <surface>
+            <!-- This friction pamareter don't contain reliable data!! -->
             <friction>
               <ode>
                 <mu>100000.0</mu>
                 <mu2>100000.0</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
               </ode>
             </friction>
+            <contact>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+5</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
           </surface>
         </collision>
 
@@ -467,12 +481,26 @@
             </cylinder>
           </geometry>
           <surface>
+            <!-- This friction pamareter don't contain reliable data!! -->
             <friction>
               <ode>
                 <mu>100000.0</mu>
                 <mu2>100000.0</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
               </ode>
             </friction>
+            <contact>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+5</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
           </surface>
         </collision>
 
@@ -534,10 +562,10 @@
         <update_rate>30</update_rate>
 
         <!-- wheels -->
-        <left_joint>wheel_left_joint</left_joint>
-        <right_joint>wheel_right_joint</right_joint>
-        <!-- <left_joint>roller_wheel_left_joint</left_joint>
-        <right_joint>roller_wheel_right_joint</right_joint> -->
+        <!-- <left_joint>wheel_left_joint</left_joint>
+        <right_joint>wheel_right_joint</right_joint> -->
+        <left_joint>roller_wheel_left_joint</left_joint>
+        <right_joint>roller_wheel_right_joint</right_joint>
   
         <!-- kinematics -->
         <wheel_separation>0.2</wheel_separation>
