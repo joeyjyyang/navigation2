@@ -362,7 +362,7 @@
 
       <link name="roller_link">
         <inertial>
-          <pose>0.15 0 -0.05 0 0 0</pose>
+          <pose>0.175 0 -0.05 0 0 0</pose>
           <inertia>
             <ixx>0.00075</ixx>
             <ixy>0.0</ixy>
@@ -375,7 +375,7 @@
         </inertial>
 
         <collision name="roller_collision">
-          <pose>0.15 0 -0.05 0 0 0</pose>
+          <pose>0.175 0 -0.05 0 0 0</pose>
           <geometry>
             <box>
               <size>0.15 0.2 0.1</size>
@@ -384,7 +384,7 @@
         </collision>
 
         <visual name="roller_visual">
-          <pose>0.15 0 -0.05 0 0 0</pose>
+          <pose>0.175 0 -0.05 0 0 0</pose>
           <geometry>
             <box>
               <size>0.15 0.2 0.1</size>
@@ -399,7 +399,7 @@
 
       <link name="roller_wheel_left_link">
         <inertial>
-          <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+          <pose>0.175 0.1 -0.08 -1.57 0 0</pose>
           <inertia>
             <ixx>0.00005</ixx>
             <ixy>0.0</ixy>
@@ -412,10 +412,10 @@
         </inertial>
 
         <collision name="roller_wheel_left_collision">
-          <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+          <pose>0.175 0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.05</radius>
+              <radius>0.03</radius>
               <length>0.05</length>
             </cylinder>
           </geometry>
@@ -430,10 +430,10 @@
         </collision>
 
         <visual name="roller_wheel_left_visual">
-          <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+          <pose>0.175 0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.05</radius>
+              <radius>0.03</radius>
               <length>0.05</length>
             </cylinder>
           </geometry>
@@ -446,7 +446,7 @@
 
       <link name="roller_wheel_right_link">
         <inertial>
-          <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+          <pose>0.175 -0.1 -0.08 -1.57 0 0</pose>
           <inertia>
             <ixx>0.00005</ixx>
             <ixy>0.0</ixy>
@@ -459,10 +459,10 @@
         </inertial>
 
         <collision name="roller_wheel_right_collision">
-          <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+          <pose>0.175 -0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.05</radius>
+              <radius>0.03</radius>
               <length>0.05</length>
             </cylinder>
           </geometry>
@@ -477,10 +477,10 @@
         </collision>
 
         <visual name="roller_wheel_right_visual">
-          <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+          <pose>0.175 -0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.05</radius>
+              <radius>0.03</radius>
               <length>0.05</length>
             </cylinder>
           </geometry>
@@ -494,7 +494,7 @@
       <joint name="roller_joint" type="revolute">
         <parent>base_link</parent>
         <child>roller_link</child>
-        <pose>0.15 0 -0.05 0 0 0</pose>
+        <pose>0.175 0 -0.05 0 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
           <limit>
@@ -507,7 +507,7 @@
       <joint name="roller_wheel_left_joint" type="revolute">
         <parent>roller_link</parent>
         <child>roller_wheel_left_link</child>
-        <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+        <pose>0.175 0.1 -0.08 -1.57 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -516,7 +516,7 @@
       <joint name="roller_wheel_right_joint" type="revolute">
         <parent>roller_link</parent>
         <child>roller_wheel_right_link</child>
-        <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+        <pose>0.175 -0.1 -0.08 -1.57 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -536,10 +536,12 @@
         <!-- wheels -->
         <left_joint>wheel_left_joint</left_joint>
         <right_joint>wheel_right_joint</right_joint>
-
+        <!-- <left_joint>roller_wheel_left_joint</left_joint>
+        <right_joint>roller_wheel_right_joint</right_joint> -->
+  
         <!-- kinematics -->
         <wheel_separation>0.2</wheel_separation>
-        <wheel_diameter>0.04</wheel_diameter>
+        <wheel_diameter>0.06</wheel_diameter>
 
         <!-- limits -->
         <max_wheel_torque>20</max_wheel_torque>
