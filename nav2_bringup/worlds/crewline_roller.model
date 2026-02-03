@@ -27,6 +27,19 @@
             </box>
           </geometry>
         </collision>
+
+        <visual name="base_visual">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.8 1</ambient>
+            <diffuse>0.0 0.0 0.8 1</diffuse>
+          </material>
+        </visual>
       </link>
 
       <link name="imu_link">
@@ -104,8 +117,8 @@
           <pose>0.0 0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.02</radius>
-              <length>0.02</length>
+              <radius>0.05</radius>
+              <length>0.05</length>
             </cylinder>
           </geometry>
           <surface>
@@ -131,6 +144,20 @@
             </contact>
           </surface>
         </collision>
+
+        <visual name="wheel_left_visual">
+          <pose>0.0 0.1 -0.08 -1.57 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+          </material>
+        </visual>
       </link>
 
       <link name="wheel_right_link">
@@ -152,8 +179,8 @@
           <pose>0.0 -0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.02</radius>
-              <length>0.02</length>
+              <radius>0.05</radius>
+              <length>0.05</length>
             </cylinder>
           </geometry>
           <surface>
@@ -179,6 +206,20 @@
             </contact>
           </surface>
         </collision>
+
+        <visual name="wheel_right_visual">
+          <pose>0.0 -0.1 -0.08 -1.57 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+          </material>
+        </visual>
       </link>
 
       <link name="front_camera_link">
@@ -337,10 +378,117 @@
           <pose>0.15 0 -0.05 0 0 0</pose>
           <geometry>
             <box>
-              <size>0.1 0.2 0.1</size>
+              <size>0.15 0.2 0.1</size>
             </box>
           </geometry>
         </collision>
+
+        <visual name="roller_visual">
+          <pose>0.15 0 -0.05 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.15 0.2 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1.0 0.4235 0.0392 1</ambient>
+            <diffuse>1.0 0.4235 0.0392 1</diffuse>
+          </material>
+        </visual>
+      </link>
+
+      <link name="roller_wheel_left_link">
+        <inertial>
+          <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+          <inertia>
+            <ixx>0.00005</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.00005</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.00002</izz>
+          </inertia>
+          <mass>0.01</mass>
+        </inertial>
+
+        <collision name="roller_wheel_left_collision">
+          <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100000.0</mu>
+                <mu2>100000.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+
+        <visual name="roller_wheel_left_visual">
+          <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+
+      <link name="roller_wheel_right_link">
+        <inertial>
+          <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+          <inertia>
+            <ixx>0.00005</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.00005</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.00002</izz>
+          </inertia>
+          <mass>0.01</mass>
+        </inertial>
+
+        <collision name="roller_wheel_right_collision">
+          <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100000.0</mu>
+                <mu2>100000.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+
+        <visual name="roller_wheel_right_visual">
+          <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+          </material>
+        </visual>
       </link>
 
       <joint name="roller_joint" type="revolute">
@@ -353,6 +501,24 @@
             <lower>-0.785</lower>
             <upper>0.785</upper>
           </limit>
+        </axis>
+      </joint>
+
+      <joint name="roller_wheel_left_joint" type="revolute">
+        <parent>roller_link</parent>
+        <child>roller_wheel_left_link</child>
+        <pose>0.15 0.1 -0.08 -1.57 0 0</pose>
+        <axis>
+          <xyz>0 0 1</xyz>
+        </axis>
+      </joint>
+
+      <joint name="roller_wheel_right_joint" type="revolute">
+        <parent>roller_link</parent>
+        <child>roller_wheel_right_link</child>
+        <pose>0.15 -0.1 -0.08 -1.57 0 0</pose>
+        <axis>
+          <xyz>0 0 1</xyz>
         </axis>
       </joint>
 
@@ -401,6 +567,8 @@
         <joint_name>wheel_left_joint</joint_name>
         <joint_name>wheel_right_joint</joint_name>
         <joint_name>roller_joint</joint_name>
+        <joint_name>roller_wheel_left_joint</joint_name>
+        <joint_name>roller_wheel_right_joint</joint_name>
       </plugin>
 
     </model>
