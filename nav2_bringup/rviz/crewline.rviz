@@ -73,41 +73,43 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         base_footprint:
           Value: true
         base_link:
           Value: true
         front_camera_depth_frame:
-          Value: true
+          Value: false
         front_camera_depth_optical_frame:
-          Value: true
+          Value: false
         front_camera_link:
           Value: true
         front_camera_rgb_frame:
-          Value: true
+          Value: false
         front_camera_rgb_optical_frame:
-          Value: true
+          Value: false
         front_camera_scan_frame:
-          Value: true
+          Value: false
         gps_link:
-          Value: true
+          Value: false
         imu_link:
+          Value: false
+        map:
           Value: true
         odom:
-          Value: true
+          Value: false
         rear_camera_depth_frame:
-          Value: true
+          Value: false
         rear_camera_depth_optical_frame:
-          Value: true
+          Value: false
         rear_camera_link:
           Value: true
         rear_camera_rgb_frame:
-          Value: true
+          Value: false
         rear_camera_rgb_optical_frame:
-          Value: true
+          Value: false
         rear_camera_scan_frame:
-          Value: true
+          Value: false
         roller_link:
           Value: true
         wheel_left_link:
@@ -120,37 +122,38 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base_footprint:
-            base_link:
-              front_camera_link:
-                front_camera_depth_frame:
-                  front_camera_depth_optical_frame:
+        map:
+          odom:
+            base_footprint:
+              base_link:
+                front_camera_link:
+                  front_camera_depth_frame:
+                    front_camera_depth_optical_frame:
+                      {}
+                  front_camera_rgb_frame:
+                    front_camera_rgb_optical_frame:
+                      {}
+                  front_camera_scan_frame:
                     {}
-                front_camera_rgb_frame:
-                  front_camera_rgb_optical_frame:
-                    {}
-                front_camera_scan_frame:
+                gps_link:
                   {}
-              gps_link:
-                {}
-              imu_link:
-                {}
-              rear_camera_link:
-                rear_camera_depth_frame:
-                  rear_camera_depth_optical_frame:
-                    {}
-                rear_camera_rgb_frame:
-                  rear_camera_rgb_optical_frame:
-                    {}
-                rear_camera_scan_frame:
+                imu_link:
                   {}
-              roller_link:
-                {}
-              wheel_left_link:
-                {}
-              wheel_right_link:
-                {}
+                rear_camera_link:
+                  rear_camera_depth_frame:
+                    rear_camera_depth_optical_frame:
+                      {}
+                  rear_camera_rgb_frame:
+                    rear_camera_rgb_optical_frame:
+                      {}
+                  rear_camera_scan_frame:
+                    {}
+                roller_link:
+                  {}
+                wheel_left_link:
+                  {}
+                wheel_right_link:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -191,7 +194,7 @@ Visualization Manager:
       Class: rviz_default_plugins/Map
       Color Scheme: map
       Draw Behind: true
-      Enabled: false
+      Enabled: true
       Name: Map
       Topic:
         Depth: 1
@@ -207,7 +210,7 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /map_updates
       Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 1
       Class: nav2_rviz_plugins/ParticleCloud
       Color: 0; 180; 0
@@ -592,7 +595,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -626,26 +629,21 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz_default_plugins/XYOrbit
-      Distance: 6.1879191398620605
+      Angle: -1.59499990940094
+      Class: rviz_default_plugins/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Focal Point:
-        X: -1.2890794277191162
-        Y: -0.33269405364990234
-        Z: 0.999997615814209
-      Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.429796814918518
+      Scale: 200.23193359375
       Target Frame: base_footprint
-      Value: XYOrbit (rviz_default_plugins)
-      Yaw: 3.1623761653900146
+      Value: TopDownOrtho (rviz_default_plugins)
+      X: 0.9597195386886597
+      Y: 0.005280555225908756
     Saved: ~
 Window Geometry:
   Displays:

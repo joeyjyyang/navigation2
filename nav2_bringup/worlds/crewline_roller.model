@@ -9,21 +9,21 @@
         <inertial>
           <pose>0 0 0 0 0 0</pose>
           <inertia>
-            <ixx>333.33</ixx>
+            <ixx>0.00333</ixx>
             <ixy>0.0</ixy>
             <ixz>0.0</ixz>
-            <iyy>333.33</iyy>
+            <iyy>0.00333</iyy>
             <iyz>0.0</iyz>
-            <izz>333.33</izz>
+            <izz>0.00333</izz>
           </inertia>
-          <mass>500.0</mass>
+          <mass>0.5</mass>
         </inertial>
 
         <collision name="base_collision">
           <pose>0 0 0 0 0 0</pose>
           <geometry>
             <box>
-              <size>2.0 2.0 2.0</size>
+              <size>0.2 0.2 0.2</size>
             </box>
           </geometry>
         </collision>
@@ -88,24 +88,24 @@
       <link name="wheel_left_link">
 
         <inertial>
-          <pose>0.0 1.0 -0.8 -1.57 0 0</pose>
+          <pose>0.0 0.1 -0.08 -1.57 0 0</pose>
           <inertia>
-            <ixx>0.05</ixx>
+            <ixx>0.00005</ixx>
             <ixy>0.0</ixy>
             <ixz>0.0</ixz>
-            <iyy>0.05</iyy>
+            <iyy>0.00005</iyy>
             <iyz>0.0</iyz>
-            <izz>0.02</izz>
+            <izz>0.00002</izz>
           </inertia>
-          <mass>10.0</mass>
+          <mass>0.01</mass>
         </inertial>
 
         <collision name="wheel_left_collision">
-          <pose>0.0 1.0 -0.8 -1.57 0 0</pose>
+          <pose>0.0 0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.2</length>
+              <radius>0.02</radius>
+              <length>0.02</length>
             </cylinder>
           </geometry>
           <surface>
@@ -136,24 +136,24 @@
       <link name="wheel_right_link">
 
         <inertial>
-          <pose>0.0 -1.0 -0.8 -1.57 0 0</pose>
+          <pose>0.0 -0.1 -0.08 -1.57 0 0</pose>
           <inertia>
-            <ixx>0.05</ixx>
+            <ixx>0.00005</ixx>
             <ixy>0.0</ixy>
             <ixz>0.0</ixz>
-            <iyy>0.05</iyy>
+            <iyy>0.00005</iyy>
             <iyz>0.0</iyz>
-            <izz>0.02</izz>
+            <izz>0.00002</izz>
           </inertia>
-          <mass>10.0</mass>
+          <mass>0.01</mass>
         </inertial>
       
         <collision name="wheel_right_collision">
-          <pose>0.0 -1.0 -0.8 -1.57 0 0</pose>
+          <pose>0.0 -0.1 -0.08 -1.57 0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.2</length>
+              <radius>0.02</radius>
+              <length>0.02</length>
             </cylinder>
           </geometry>
           <surface>
@@ -183,7 +183,7 @@
 
       <link name="front_camera_link">
         <inertial>
-          <pose>1.0 0 1.0 0 0 0</pose>
+          <pose>0.1 0 0.1 0 0 0</pose>
           <inertia>
             <ixx>0.001</ixx>
             <ixy>0.000</ixy>
@@ -203,12 +203,12 @@
           </geometry>
         </collision>
 
-        <pose>1.0 0 1.0 0 0 0</pose>
+        <pose>0.1 0 0.1 0 0 0</pose>
 
         <sensor name="front_intel_realsense_r200_depth" type="depth">
           <always_on>1</always_on>
           <update_rate>10</update_rate>
-          <pose>1.0 0 1.0 0 0 0</pose>
+          <pose>0.1 0 0.1 0 0 0</pose>
           <camera name="front_realsense_depth_camera">
           </camera>
           <plugin name="front_intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
@@ -225,7 +225,7 @@
 
       <link name="rear_camera_link">
         <inertial>
-          <pose>-1.0 0 1.0 0 0 0</pose>
+          <pose>-0.1 0 0.1 0 0 0</pose>
           <inertia>
             <ixx>0.001</ixx>
             <ixy>0.000</ixy>
@@ -245,12 +245,12 @@
           </geometry>
         </collision>
 
-        <pose>-1.0 0 1.0 0 0 0</pose>
+        <pose>-0.1 0 0.1 0 0 0</pose>
 
         <sensor name="rear_intel_realsense_r200_depth" type="depth">
           <always_on>1</always_on>
           <update_rate>10</update_rate>
-          <pose>-1.0 0 1.0 0 0 3.14</pose>
+          <pose>-0.1 0 0.1 0 0 3.14</pose>
           <camera name="rear_realsense_depth_camera">
           </camera>
           <plugin name="rear_intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
@@ -268,25 +268,25 @@
       <joint name="base_joint" type="fixed">
         <parent>base_footprint</parent>
         <child>base_link</child>
-        <pose>0.0 0.0 1.0 0 0 0</pose>
+        <pose>0.0 0.0 0.1 0 0 0</pose>
       </joint>
 
       <joint name="imu_joint" type="fixed">
         <parent>base_link</parent>
         <child>imu_link</child>
-        <pose>0.0 0 1.0 0 0 0</pose>
+        <pose>0.0 0 0.1 0 0 0</pose>
       </joint>
 
       <joint name="gps_joint" type="fixed">
         <parent>base_link</parent>
         <child>gps_link</child>
-        <pose>0.0 0 1.0 0 0 0</pose>
+        <pose>0.0 0 0.1 0 0 0</pose>
       </joint>
 
       <joint name="wheel_left_joint" type="revolute">
         <parent>base_link</parent>
         <child>wheel_left_link</child>
-        <pose>0.0 1.0 -0.8 -1.57 0 0</pose>
+        <pose>0.0 0.1 -0.08 -1.57 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -295,7 +295,7 @@
       <joint name="wheel_right_joint" type="revolute">
         <parent>base_link</parent>
         <child>wheel_right_link</child>
-        <pose>0.0 -1.0 -0.8 -1.57 0 0</pose>
+        <pose>0.0 -0.1 -0.08 -1.57 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -304,7 +304,7 @@
       <joint name="front_camera_joint" type="fixed">
         <parent>base_link</parent>
         <child>front_camera_link</child>
-        <pose>1.0 0 1.0 0 0 0</pose>
+        <pose>0.1 0 0.1 0 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -313,7 +313,7 @@
       <joint name="rear_camera_joint" type="fixed">
         <parent>base_link</parent>
         <child>rear_camera_link</child>
-        <pose>-1.0 0 1.0 0 0 3.14</pose>
+        <pose>-0.1 0 0.1 0 0 3.14</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
@@ -321,23 +321,23 @@
 
       <link name="roller_link">
         <inertial>
-          <pose>1.5 0 -0.5 0 0 0</pose>
+          <pose>0.15 0 -0.05 0 0 0</pose>
           <inertia>
-            <ixx>75.0</ixx>
+            <ixx>0.00075</ixx>
             <ixy>0.0</ixy>
             <ixz>0.0</ixz>
-            <iyy>33.33</iyy>
+            <iyy>0.00033</iyy>
             <iyz>0.0</iyz>
-            <izz>100.0</izz>
+            <izz>0.001</izz>
           </inertia>
-          <mass>200.0</mass>
+          <mass>0.2</mass>
         </inertial>
 
         <collision name="roller_collision">
-          <pose>1.5 0 -0.5 0 0 0</pose>
+          <pose>0.15 0 -0.05 0 0 0</pose>
           <geometry>
             <box>
-              <size>1.0 2.0 1.0</size>
+              <size>0.1 0.2 0.1</size>
             </box>
           </geometry>
         </collision>
@@ -346,7 +346,7 @@
       <joint name="roller_joint" type="revolute">
         <parent>base_link</parent>
         <child>roller_link</child>
-        <pose>1.5 0 -0.5 0 0 0</pose>
+        <pose>0.15 0 -0.05 0 0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
           <limit>
@@ -372,8 +372,8 @@
         <right_joint>wheel_right_joint</right_joint>
 
         <!-- kinematics -->
-        <wheel_separation>2.0</wheel_separation>
-        <wheel_diameter>0.4</wheel_diameter>
+        <wheel_separation>0.2</wheel_separation>
+        <wheel_diameter>0.04</wheel_diameter>
 
         <!-- limits -->
         <max_wheel_torque>20</max_wheel_torque>
