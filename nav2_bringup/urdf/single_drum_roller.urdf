@@ -199,7 +199,7 @@
 
   <link name="imu_link"/>
 
-  <joint name="scan_joint" type="fixed">
+  <!-- <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_scan"/>
     <origin xyz="-0.064 0 0.122" rpy="0 0 0"/>
@@ -228,7 +228,7 @@
                iyy="0.001" iyz="0.0"
                izz="0.001" />
     </inertial>
-  </link>
+  </link> -->
 
   <joint name="camera_joint" type="fixed">
     <origin xyz="0.064 -0.065 0.094" rpy="0 0 0"/>
@@ -289,5 +289,12 @@
     <child link="camera_depth_optical_frame"/>
   </joint>
   <link name="camera_depth_optical_frame"/>
+
+  <joint name="camera_scan_joint" type="fixed">
+    <origin xyz="0.005 0.028 0.013" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_scan_frame"/>
+  </joint>
+  <link name="camera_scan_frame"/>
 
 </robot>
