@@ -228,43 +228,43 @@ def generate_launch_description():
             'transform_tolerance': 0.01,
             'min_height': 0.0,
             'max_height': 1.0,
-            'angle_min': -0.349066,
-            'angle_max': 0.349066,
+            'angle_min': -0.523599,
+            'angle_max': 0.523599,
             'angle_increment': 0.0017453,
             'scan_time': 0.1,
-            'range_min': 0.3,
-            'range_max': 40.0,
+            'range_min': 0.05,
+            'range_max': 5.0,
             'use_inf': True,
         }],
         remappings=[
             ('cloud_in', '/front_intel_realsense_r200_depth/points'),
-            ('scan', '/scan')
+            ('scan', '/front_cam_scan')
         ])
 
-    # rear_camera_pointcloud_to_laserscan_cmd = Node(
-    #     package='pointcloud_to_laserscan',
-    #     executable='pointcloud_to_laserscan_node',
-    #     name='pointcloud_to_laserscan',
-    #     namespace=namespace,
-    #     output='screen',
-    #     parameters=[{
-    #         'use_sim_time': use_sim_time,
-    #         'target_frame': 'rear_camera_scan_frame',
-    #         'transform_tolerance': 0.01,
-    #         'min_height': 0.0,
-    #         'max_height': 1.0,
-    #         'angle_min': -0.349066,
-    #         'angle_max': 0.349066,
-    #         'angle_increment': 0.0017453,
-    #         'scan_time': 0.1,
-    #         'range_min': 0.3,
-    #         'range_max': 40.0,
-    #         'use_inf': True,
-    #     }],
-    #     remappings=[
-    #         ('cloud_in', '/rear_intel_realsense_r200_depth/points'),
-    #         ('scan', '/scan2')
-    #     ])
+    rear_camera_pointcloud_to_laserscan_cmd = Node(
+        package='pointcloud_to_laserscan',
+        executable='pointcloud_to_laserscan_node',
+        name='pointcloud_to_laserscan',
+        namespace=namespace,
+        output='screen',
+        parameters=[{
+            'use_sim_time': use_sim_time,
+            'target_frame': 'rear_camera_scan_frame',
+            'transform_tolerance': 0.01,
+            'min_height': 0.0,
+            'max_height': 1.0,
+            'angle_min': -0.523599,
+            'angle_max': 0.523599,
+            'angle_increment': 0.0017453,
+            'scan_time': 0.1,
+            'range_min': 0.05,
+            'range_max': 5.0,
+            'use_inf': True,
+        }],
+        remappings=[
+            ('cloud_in', '/rear_intel_realsense_r200_depth/points'),
+            ('scan', '/rear_cam_scan')
+        ])
 
     # Create the launch description and populate
     ld = LaunchDescription()
@@ -297,7 +297,7 @@ def generate_launch_description():
     # Add the actions to launch all of the navigation nodes
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(front_camera_pointcloud_to_laserscan_cmd)
-    # ld.add_action(rear_camera_pointcloud_to_laserscan_cmd)
+    ld.add_action(rear_camera_pointcloud_to_laserscan_cmd)
     ld.add_action(rviz_cmd)
     ld.add_action(bringup_cmd)
 

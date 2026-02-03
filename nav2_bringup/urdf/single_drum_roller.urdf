@@ -286,7 +286,7 @@
   </joint>
   <link name="front_camera_scan_frame"/>
 
-  <!-- <joint name="rear_camera_joint" type="fixed">
+  <joint name="rear_camera_joint" type="fixed">
     <origin xyz="-0.064 0 0.094" rpy="0 0 3.14"/>
     <parent link="base_link"/>
     <child link="rear_camera_link"/>
@@ -340,5 +340,5 @@
     <parent link="rear_camera_link"/>
     <child link="rear_camera_scan_frame"/>
   </joint>
-  <link name="rear_camera_scan_frame"/> -->
+  <link name="rear_camera_scan_frame"/>
 </robot>

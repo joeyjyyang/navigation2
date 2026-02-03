@@ -379,7 +379,7 @@
           <pose>0.064 0 0.107 0 0 0</pose>
           <camera name="front_realsense_depth_camera">
           </camera>
-          <plugin name="intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
+          <plugin name="front_intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
             <ros>
             </ros>
             <camera_name>front_intel_realsense_r200_depth</camera_name>
@@ -401,7 +401,7 @@
         <pose>0.069 0 0.107 0 0 0</pose>
       </link>
 
-      <!-- <link name="rear_camera_link">
+      <link name="rear_camera_link">
         <inertial>
           <pose>-0.069 0 0.107 0 0 0</pose>
           <inertia>
@@ -428,10 +428,10 @@
         <sensor name="rear_intel_realsense_r200_depth" type="depth">
           <always_on>1</always_on>
           <update_rate>10</update_rate>
-          <pose>-0.064 0 0.107 0 0 0</pose>
+          <pose>-0.064 0 0.107 0 0 3.14</pose>
           <camera name="rear_realsense_depth_camera">
           </camera>
-          <plugin name="intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
+          <plugin name="rear_intel_realsense_r200_depth_driver" filename="libgazebo_ros_camera.so">
             <ros>
             </ros>
             <camera_name>rear_intel_realsense_r200_depth</camera_name>
@@ -442,16 +442,8 @@
           </plugin>
         </sensor>
 
-        <collision name="collision">
-          <pose>0 0.047 -0.005 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.008 0.130 0.022</size>
-            </box>
-          </geometry>
-        </collision>
         <pose>-0.069 0 0.107 0 0 0</pose>
-      </link> -->
+      </link>
 
       <joint name="base_joint" type="fixed">
         <parent>base_footprint</parent>
@@ -505,14 +497,15 @@
         </axis>
       </joint>
 
-      <!-- <joint name="rear_camera_joint" type="fixed">
+      <joint name="rear_camera_joint" type="fixed">
         <parent>base_link</parent>
         <child>rear_camera_link</child>
         <pose>-0.064 0 0.094 0 0 3.14</pose>
         <axis>
           <xyz>0 0 1</xyz>
         </axis>
-      </joint> -->
+      </joint>
+
 
       <plugin name="turtlebot3_diff_drive" filename="libgazebo_ros_diff_drive.so">
 
